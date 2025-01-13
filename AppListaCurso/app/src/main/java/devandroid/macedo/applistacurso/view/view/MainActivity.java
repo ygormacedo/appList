@@ -16,6 +16,11 @@ import devandroid.macedo.applistacurso.view.model.Pessoa;
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
+    Pessoa outraPessoa;
+
+    String dadosPessoa;
+    String dadosOutraPessoa;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +33,42 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        pessoa = new Pessoa();
 
-        pessoa.setPrimeiroNome("Ygor");
-        pessoa.setSobreNome("Macedo");
-        pessoa.setCursoDesejado("Android Java/Kotlin");
-        pessoa.setTelefoneContato("11947578682");
+        pessoa = new Pessoa();
+        outraPessoa = new Pessoa();
+        pessoa.setPrimeiroNome(" Ygor");
+        pessoa.setSobreNome(" Macedo");
+        pessoa.setCursoDesejado(" Android Java/Kotlin");
+        pessoa.setTelefoneContato(" 11-947578682");
+
+        outraPessoa = new Pessoa();
+        outraPessoa.setPrimeiroNome("Luiz");
+        outraPessoa.setSobreNome("Henrique");
+        outraPessoa.setCursoDesejado("Ads");
+        outraPessoa.setTelefoneContato("11-947578682");
+
+        dadosPessoa = "Primeiro nome: ";
+        dadosPessoa += pessoa.getPrimeiroNome();
+        dadosPessoa += "Sobrenome: ";
+        dadosPessoa += pessoa.getSobreNome();
+        dadosPessoa += "Curso desejado: ";
+        dadosPessoa += pessoa.getCursoDesejado();
+        dadosPessoa += "Telefone ";
+        dadosPessoa += pessoa.getTelefoneContato();
+
+        dadosOutraPessoa = "Primeiro nome: ";
+        dadosOutraPessoa += pessoa.getPrimeiroNome();
+        dadosOutraPessoa += "Sobrenome: ";
+        dadosOutraPessoa += pessoa.getSobreNome();
+        dadosOutraPessoa += "Curso desejado: ";
+        dadosOutraPessoa += pessoa.getCursoDesejado();
+        dadosOutraPessoa += "Telefone ";
+        dadosOutraPessoa += pessoa.getTelefoneContato();
+
+
+
+        int parada = 0;
+
 
         Log.i("Exibir: ","Nome: "+pessoa.getPrimeiroNome());
         Log.i("Exibir: ","Nome: "+pessoa.getSobreNome());
