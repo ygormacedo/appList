@@ -1,4 +1,9 @@
 package devandroid.macedo.applistacurso.view.model;
 
-public class curso {
+public class Pessoa {
+
+    public Pessoa(){
+
+    }
+
 }
