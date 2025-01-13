@@ -24,9 +24,6 @@ public class MainActivity extends AppCompatActivity {
     Pessoa pessoa;
     Pessoa outraPessoa;
 
-    String dadosPessoa;
-    String dadosOutraPessoa;
-
     EditText editNome;
     EditText editSobreome;
     EditText editCurso;
@@ -49,11 +46,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        // pessoa = new Pessoa();
-        // pessoa.setPrimeiroNome(" Ygor");
-        // pessoa.setSobreNome(" Macedo");
-        // pessoa.setCursoDesejado(" Android Java/Kotlin");
-        // pessoa.setTelefoneContato(" 11-947578682");
+        pessoa = new Pessoa();
 
         outraPessoa = new Pessoa();
         outraPessoa.setPrimeiroNome("Luiz");
@@ -88,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"Volte Sempre", LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Volte Sempre", LENGTH_LONG).show();
                 finish();
             }
         });
@@ -101,39 +94,10 @@ public class MainActivity extends AppCompatActivity {
                 outraPessoa.setCursoDesejado(editCurso.getText().toString());
                 outraPessoa.setTelefoneContato(editNumero.getText().toString());
 
-             Toast.makeText(MainActivity.this,"Salvo"+outraPessoa.toString(), LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Salvo" + outraPessoa.toString(), LENGTH_LONG).show();
 
             }
         });
-
-
-      /*
-
-        Log.i("POO Android: ",pessoa.toString());
-        Log.i("POO Android: ",outraPessoa.toString());
-
-
-        dadosPessoa = "Primeiro nome: ";
-        dadosPessoa += pessoa.getPrimeiroNome();
-        dadosPessoa += "Sobrenome: ";
-        dadosPessoa += pessoa.getSobreNome();
-        dadosPessoa += "Curso desejado: ";
-        dadosPessoa += pessoa.getCursoDesejado();
-        dadosPessoa += "Telefone ";
-        dadosPessoa += pessoa.getTelefoneContato();
-
-        dadosOutraPessoa = "Primeiro nome: ";
-        dadosOutraPessoa += outraPessoa.getPrimeiroNome();
-        dadosOutraPessoa += "Sobrenome: ";
-        dadosOutraPessoa += outraPessoa.getSobreNome();
-        dadosOutraPessoa += "Curso desejado: ";
-        dadosOutraPessoa += outraPessoa.getCursoDesejado();
-        dadosOutraPessoa += "Telefone ";
-        dadosOutraPessoa += outraPessoa.getTelefoneContato();
-
-        */
-
-
 
     }
 }

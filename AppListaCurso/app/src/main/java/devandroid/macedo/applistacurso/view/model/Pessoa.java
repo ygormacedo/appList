@@ -45,7 +45,7 @@ public class Pessoa {
         this.telefoneContato = telefoneContato;
     }
 
-    public Pessoa(){
+    public Pessoa() {
 
     }
 

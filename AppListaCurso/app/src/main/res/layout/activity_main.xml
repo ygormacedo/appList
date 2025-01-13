@@ -9,11 +9,11 @@
 
     <TextView
         android:id="@+id/txtTitulo"
-        android:textSize="18sp"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="32dp"
         android:text="@string/app_name"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -85,8 +85,8 @@
         android:id="@+id/btnSalvar"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:text="@string/salvar"
         android:background="@color/corBotoes"
+        android:text="@string/salvar"
         app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnLimpar"
@@ -97,8 +97,8 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
-        android:text="@string/finalizar"
         android:background="@color/corBotoes"
+        android:text="@string/finalizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
