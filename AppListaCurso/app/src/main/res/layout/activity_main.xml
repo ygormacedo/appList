@@ -82,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editNumero" />
 
     <Button
-        android:id="@+id/txtSalvar"
+        android:id="@+id/btnSalvar"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:text="@string/salvar"

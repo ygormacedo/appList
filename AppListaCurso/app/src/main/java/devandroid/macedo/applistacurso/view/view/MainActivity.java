@@ -1,7 +1,13 @@
 package devandroid.macedo.applistacurso.view.view;
 
+import static android.widget.Toast.LENGTH_LONG;
+
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
     String dadosPessoa;
     String dadosOutraPessoa;
 
+    EditText editNome;
+    EditText editSobreome;
+    EditText editCurso;
+    EditText editNumero;
+
+    Button btnLimpar;
+    Button btnSalvar;
+    Button btnFinalizar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,17 +49,69 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        pessoa = new Pessoa();
-        pessoa.setPrimeiroNome(" Ygor");
-        pessoa.setSobreNome(" Macedo");
-        pessoa.setCursoDesejado(" Android Java/Kotlin");
-        pessoa.setTelefoneContato(" 11-947578682");
+        // pessoa = new Pessoa();
+        // pessoa.setPrimeiroNome(" Ygor");
+        // pessoa.setSobreNome(" Macedo");
+        // pessoa.setCursoDesejado(" Android Java/Kotlin");
+        // pessoa.setTelefoneContato(" 11-947578682");
 
         outraPessoa = new Pessoa();
         outraPessoa.setPrimeiroNome("Luiz");
         outraPessoa.setSobreNome("Henrique");
         outraPessoa.setCursoDesejado("Ads");
         outraPessoa.setTelefoneContato("11-947578682");
+
+        editNome = findViewById(R.id.editNome);
+        editSobreome = findViewById(R.id.editSobrenome);
+        editCurso = findViewById(R.id.editCurso);
+        editNumero = findViewById(R.id.editNumero);
+        btnSalvar = findViewById(R.id.btnSalvar);
+        btnLimpar = findViewById(R.id.btnLimpar);
+        btnFinalizar = findViewById(R.id.btnFinalizar);
+
+
+        editNome.setText(outraPessoa.getPrimeiroNome());
+        editSobreome.setText(outraPessoa.getSobreNome());
+        editNumero.setText(outraPessoa.getTelefoneContato());
+        editCurso.setText(outraPessoa.getCursoDesejado());
+
+        btnLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editNome.setText("");
+                editSobreome.setText("");
+                editCurso.setText("");
+                editNumero.setText("");
+            }
+        });
+
+        btnFinalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"Volte Sempre", LENGTH_LONG).show();
+                finish();
+            }
+        });
+
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                outraPessoa.setPrimeiroNome(editNome.getText().toString());
+                outraPessoa.setSobreNome(editSobreome.getText().toString());
+                outraPessoa.setCursoDesejado(editCurso.getText().toString());
+                outraPessoa.setTelefoneContato(editNumero.getText().toString());
+
+             Toast.makeText(MainActivity.this,"Salvo"+outraPessoa.toString(), LENGTH_LONG).show();
+
+            }
+        });
+
+
+      /*
+
+        Log.i("POO Android: ",pessoa.toString());
+        Log.i("POO Android: ",outraPessoa.toString());
+
 
         dadosPessoa = "Primeiro nome: ";
         dadosPessoa += pessoa.getPrimeiroNome();
@@ -64,9 +131,9 @@ public class MainActivity extends AppCompatActivity {
         dadosOutraPessoa += "Telefone ";
         dadosOutraPessoa += outraPessoa.getTelefoneContato();
 
+        */
 
-        Log.i("POO Android: ",pessoa.toString());
-        Log.i("POO Android: ",outraPessoa.toString());
+
 
     }
 }
