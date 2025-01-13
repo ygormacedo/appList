@@ -1,6 +1,7 @@
 package devandroid.macedo.applistacurso.view.view;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +30,15 @@ public class MainActivity extends AppCompatActivity {
 
         pessoa = new Pessoa();
 
+        pessoa.setPrimeiroNome("Ygor");
+        pessoa.setSobreNome("Macedo");
+        pessoa.setCursoDesejado("Android Java/Kotlin");
+        pessoa.setTelefoneContato("11947578682");
 
+        Log.i("Exibir: ","Nome: "+pessoa.getPrimeiroNome());
+        Log.i("Exibir: ","Nome: "+pessoa.getSobreNome());
+        Log.i("Exibir: ","Nome: "+pessoa.getCursoDesejado());
+        Log.i("Exibir: ","Nome: "+pessoa.getTelefoneContato());
 
 
     }
