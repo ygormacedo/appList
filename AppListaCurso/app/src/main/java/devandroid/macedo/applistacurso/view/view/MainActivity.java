@@ -21,6 +21,8 @@ import devandroid.macedo.applistacurso.view.model.Pessoa;
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
+    Pessoa outraPessoa;
+
 
     EditText editNome;
     EditText editSobreome;
@@ -50,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setTelefoneContato(" 11-947578682");
 
 
+        pessoa = new Pessoa();
+
+        outraPessoa = new Pessoa();
+        outraPessoa.setPrimeiroNome("Luiz");
+        outraPessoa.setSobreNome("Henrique");
+        outraPessoa.setCursoDesejado("Ads");
+        outraPessoa.setTelefoneContato("11-947578682");
+      
         editNome = findViewById(R.id.editNome);
         editSobreome = findViewById(R.id.editSobrenome);
         editCurso = findViewById(R.id.editCurso);
@@ -89,6 +99,12 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setSobreNome(editSobreome.getText().toString());
                 pessoa.setCursoDesejado(editCurso.getText().toString());
                 pessoa.setTelefoneContato(editNumero.getText().toString());
+
+
+                Toast.makeText(MainActivity.this, "Salvo" + outraPessoa.toString(), LENGTH_LONG).show();
+
+            }
+        });
 
                 Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), LENGTH_LONG).show();
 
