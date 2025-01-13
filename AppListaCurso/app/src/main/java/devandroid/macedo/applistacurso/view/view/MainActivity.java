@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         pessoa = new Pessoa();
-        outraPessoa = new Pessoa();
         pessoa.setPrimeiroNome(" Ygor");
         pessoa.setSobreNome(" Macedo");
         pessoa.setCursoDesejado(" Android Java/Kotlin");
@@ -57,24 +56,17 @@ public class MainActivity extends AppCompatActivity {
         dadosPessoa += pessoa.getTelefoneContato();
 
         dadosOutraPessoa = "Primeiro nome: ";
-        dadosOutraPessoa += pessoa.getPrimeiroNome();
+        dadosOutraPessoa += outraPessoa.getPrimeiroNome();
         dadosOutraPessoa += "Sobrenome: ";
-        dadosOutraPessoa += pessoa.getSobreNome();
+        dadosOutraPessoa += outraPessoa.getSobreNome();
         dadosOutraPessoa += "Curso desejado: ";
-        dadosOutraPessoa += pessoa.getCursoDesejado();
+        dadosOutraPessoa += outraPessoa.getCursoDesejado();
         dadosOutraPessoa += "Telefone ";
-        dadosOutraPessoa += pessoa.getTelefoneContato();
+        dadosOutraPessoa += outraPessoa.getTelefoneContato();
 
 
-
-        int parada = 0;
-
-
-        Log.i("Exibir: ","Nome: "+pessoa.getPrimeiroNome());
-        Log.i("Exibir: ","Nome: "+pessoa.getSobreNome());
-        Log.i("Exibir: ","Nome: "+pessoa.getCursoDesejado());
-        Log.i("Exibir: ","Nome: "+pessoa.getTelefoneContato());
-
+        Log.i("POO Android: ",pessoa.toString());
+        Log.i("POO Android: ",outraPessoa.toString());
 
     }
 }
