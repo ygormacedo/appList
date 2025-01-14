@@ -15,11 +15,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.macedo.applistacurso.R;
+import devandroid.macedo.applistacurso.view.controller.PessoaController;
 import devandroid.macedo.applistacurso.view.model.Pessoa;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    PessoaController controller;
     Pessoa pessoa;
 
     EditText editNome;
@@ -43,7 +45,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        controller = new PessoaController();
+
         pessoa = new Pessoa();
+
         pessoa.setPrimeiroNome(" Ygor");
         pessoa.setSobreNome(" Macedo");
         pessoa.setCursoDesejado(" Android Java/Kotlin");
@@ -94,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), LENGTH_LONG).show();
 
+                controller.salvar(pessoa);
             }
         });
     }
