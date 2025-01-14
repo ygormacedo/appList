@@ -2,6 +2,8 @@ package devandroid.macedo.applistacurso.view.view;
 
 import static android.widget.Toast.LENGTH_LONG;
 
+import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +23,9 @@ import devandroid.macedo.applistacurso.view.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    SharedPreferences preferences;
+    public static final String NOME_PREFERENES = "pref_listavip";
     PessoaController controller;
     Pessoa pessoa;
 
@@ -45,8 +50,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        preferences = getSharedPreferences(NOME_PREFERENES,0);
+        @SuppressLint("CommitPrefEdits") SharedPreferences.Editor listaVip = preferences.edit();
         controller = new PessoaController();
-
         pessoa = new Pessoa();
 
         pessoa.setPrimeiroNome(" Ygor");
@@ -99,8 +105,18 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), LENGTH_LONG).show();
 
+
+                listaVip.putString("primeiroNome",pessoa.getPrimeiroNome());
+                listaVip.putString("sobreNome",pessoa.getSobreNome());
+                listaVip.putString("nomeCurso",pessoa.getCursoDesejado());
+                listaVip.putString("telefoneContato",pessoa.getTelefoneContato());
+                listaVip.apply();
+
                 controller.salvar(pessoa);
             }
         });
     }
 }
+
+
+// https://class.devsamurai.com.br/ baixar uns negocio
