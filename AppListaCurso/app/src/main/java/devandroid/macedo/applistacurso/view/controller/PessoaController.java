@@ -18,5 +18,8 @@ public class PessoaController {
 
         Log.i("MVC_CONTROLLER","COntroller Salva: "+pessoa.toString());
 
+
+        //commit sharedpreferences
+
     }
 }
