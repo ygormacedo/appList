@@ -1,5 +1,7 @@
 package devandroid.macedo.applistacurso.view.model;
 
+import devandroid.macedo.applistacurso.view.view.MainActivity;
+
 public class Pessoa {
 
     // Construtor -
@@ -45,7 +47,7 @@ public class Pessoa {
         this.telefoneContato = telefoneContato;
     }
 
-    public Pessoa() {
+    public Pessoa(MainActivity mainActivity) {
 
     }
 
